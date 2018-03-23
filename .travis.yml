@@ -24,6 +24,7 @@ script:
   - touch ~/ros2_ios_ws/src/ruslo/polly/examples/01-executable/AMENT_IGNORE
   - touch ~/ros2_ios_ws/src/ruslo/polly/examples/02-library/AMENT_IGNORE
   - touch ~/ros2_ios_ws/src/ruslo/polly/examples/03-shared-link/AMENT_IGNORE
+  - touch ~/ros2_ios_ws/src/ros2/rcl_interfaces/test_msgs/AMENT_IGNORE
   - cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
   - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
   - cd ~/ros2_objc_ws
