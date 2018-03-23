@@ -25,8 +25,8 @@ script:
   - touch ~/ros2_ios_ws/src/ruslo/polly/examples/02-library/AMENT_IGNORE
   - touch ~/ros2_ios_ws/src/ruslo/polly/examples/03-shared-link/AMENT_IGNORE
   - touch ~/ros2_ios_ws/src/ros2/rcl_interfaces/test_msgs/AMENT_IGNORE
-  - cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
+  - cd ~/ros2_ios_ws/src/ros2/rosidl_typesupport
   - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
-  - cd ~/ros2_objc_ws
+  - cd ~/ros2_ios_ws
   - src/ament/ament_tools/scripts/ament.py build --parallel --use-xcode --symlink-install --isolated --cmake-args -DTHIRDPARTY=ON -DCOMPILE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/ios-nocodesign-${ROS2_IOS_VERSION}.cmake -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO -- --make-flags -quiet -sdk iphoneos | tee /tmp/ament_build.log | xcpretty
   - tail /tmp/ament_build.log
