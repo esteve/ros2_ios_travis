@@ -7,6 +7,10 @@ before_install:
   - sudo -H python3 -m pip install empy setuptools vcstool pyparsing
   - gem install xcpretty
 
+env:
+  - ROS2_IOS_VERSION="10-1"
+  - XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
+
 script:
   - /bin/pwd
   - mkdir -p ~/ros2_ios_ws/src
@@ -22,7 +26,5 @@ script:
   - cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
   - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
   - cd ~/ros2_objc_ws
-  - export ROS2_IOS_VERSION="10-1"
-  - export XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
   - src/ament/ament_tools/scripts/ament.py build --parallel --use-xcode --symlink-install --isolated --cmake-args -DTHIRDPARTY=ON -DCOMPILE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/ios-nocodesign-${ROS2_IOS_VERSION}.cmake -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO -- --make-flags -quiet -sdk iphoneos | tee /tmp/ament_build.log | xcpretty
   - tail /tmp/ament_build.log
