@@ -1,0 +1,27 @@
+language: generic
+osx_image: xcode8.3
+os: osx
+
+before_install:
+  - brew tap osrf/ros2
+  - brew tap ros/deps
+#  - brew unlink numpy
+  - brew install python3 wget cppcheck gtest tinyxml eigen pcre # cmake already installed
+  - brew install asio tinyxml2
+  - brew tap homebrew/science
+#  - brew install opencv --without-python
+  - sudo -H python3 -m pip install empy setuptools nose vcstool pep8 pydocstyle pyflakes flake8 mock coverage pyparsing
+  - gem install xcpretty
+
+script:
+  - /bin/pwd
+  - mkdir -p ~/ros2_objc_ws/src
+  - cd ~/ros2_objc_ws
+  - vcs import ~/ros2_objc_ws/src < $TRAVIS_BUILD_DIR/ros2_objc_macos_travis.repos
+  - cd ~/ros2_objc_ws/src/ros2_objc/ros2_objc
+  - git checkout $TRAVIS_BRANCH
+  - cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
+  - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_objc_travis.patch
+  - cd ~/ros2_objc_ws
+  - src/ament/ament_tools/scripts/ament.py build --parallel --use-xcode --symlink-install --isolated --make-flags -quiet | tee /tmp/ament_build.log | xcpretty
+  - tail /tmp/ament_build.log
