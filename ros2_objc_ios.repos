@@ -50,7 +50,7 @@ repositories:
   ros2/rcl:
     type: git
     url: https://github.com/ros2/rcl.git
-    version: 5fa1b0e0d9d63de3e6eddda87276cc290857bcb2
+    version: format-string-fix
   ros2/rcutils:
     type: git
     url: https://github.com/esteve/rcutils.git
