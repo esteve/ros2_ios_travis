@@ -27,6 +27,6 @@ script:
   - cd ~/ros2_ios_ws/src/ros2/rosidl_typesupport
   - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
   - cd ~/ros2_ios_ws
-  - src/ament/ament_tools/scripts/ament.py build --use-xcode --symlink-install --isolated --cmake-args -DCMAKE_BUILD_TYPE=Release -DBUILD_TYPE=Release -DTHIRDPARTY=ON -DCOMPILE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/ios-nocodesign-${ROS2_IOS_VERSION}.cmake -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO -- --make-flags -quiet -sdk iphoneos
+  - src/ament/ament_tools/scripts/ament.py build --use-xcode --symlink-install --isolated --cmake-args -DCMAKE_BUILD_TYPE=Release -DTHIRDPARTY=ON -DCOMPILE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/ios-nocodesign-${ROS2_IOS_VERSION}.cmake -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO -- --make-flags -quiet -sdk iphoneos
   # - src/ament/ament_tools/scripts/ament.py build --use-xcode --symlink-install --isolated --cmake-args -DCMAKE_BUILD_TYPE=Release -DTHIRDPARTY=ON -DCOMPILE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/ios-nocodesign-${ROS2_IOS_VERSION}.cmake -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO -- --make-flags -quiet -sdk iphoneos | tee /tmp/ament_build.log | xcpretty
   # - tail /tmp/ament_build.log
