@@ -1,10 +1,10 @@
 language: generic
-osx_image: xcode9.2
+osx_image: xcode8.3
 os: osx
 
 env:
   global:
-    - ROS2_IOS_VERSION="10-1"
+    - ROS2_IOS_VERSION="10-3"
     - XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
 
 before_install:
