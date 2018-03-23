@@ -15,13 +15,19 @@ before_install:
 
 script:
   - /bin/pwd
-  - mkdir -p ~/ros2_objc_ws/src
-  - cd ~/ros2_objc_ws
-  - vcs import ~/ros2_objc_ws/src < $TRAVIS_BUILD_DIR/ros2_objc_macos_travis.repos
-  - cd ~/ros2_objc_ws/src/ros2_objc/ros2_objc
-  - git checkout $TRAVIS_BRANCH
+  - mkdir -p ~/ros2_ios_ws/src
+  - cd ~/ros2_ios_ws
+  - wget https://raw.githubusercontent.com/esteve/ros2_objc/master/ros2_objc_ios.repos
+  - vcs import ~/ros2_ios_ws/src < $TRAVIS_BUILD_DIR/ros2_objc_ios.repos
+  - touch ~/ros2_ios_ws/src/ros2/rosidl/python_cmake_module/AMENT_IGNORE
+  - touch ~/ros2_ios_ws/src/ros2/rosidl/rosidl_generator_py/AMENT_IGNORE
+  - touch ~/ros2_ios_ws/src/ruslo/polly/examples/01-executable/AMENT_IGNORE
+  - touch ~/ros2_ios_ws/src/ruslo/polly/examples/02-library/AMENT_IGNORE
+  - touch ~/ros2_ios_ws/src/ruslo/polly/examples/03-shared-link/AMENT_IGNORE
   - cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
-  - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_objc_travis.patch
+  - patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
   - cd ~/ros2_objc_ws
-  - src/ament/ament_tools/scripts/ament.py build --parallel --use-xcode --symlink-install --isolated --make-flags -quiet | tee /tmp/ament_build.log | xcpretty
+  - export ROS2_IOS_VERSION="10-1"
+  - export XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
+  - src/ament/ament_tools/scripts/ament.py build --parallel --use-xcode --symlink-install --isolated --cmake-args -DTHIRDPARTY=ON -DCOMPILE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DCMAKE_TOOLCHAIN_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/ios-nocodesign-${ROS2_IOS_VERSION}.cmake -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO -- --make-flags -quiet -sdk iphoneos | tee /tmp/ament_build.log | xcpretty
   - tail /tmp/ament_build.log
