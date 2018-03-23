@@ -2,14 +2,15 @@ language: generic
 osx_image: xcode8.3
 os: osx
 
+env:
+  global:
+    - ROS2_IOS_VERSION="10-1"
+    - XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
+
 before_install:
   - brew upgrade python
   - sudo -H python3 -m pip install empy setuptools vcstool pyparsing
   - gem install xcpretty
-
-env:
-  - ROS2_IOS_VERSION="10-1"
-  - XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
 
 script:
   - /bin/pwd
