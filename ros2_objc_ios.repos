@@ -50,7 +50,7 @@ repositories:
   ros2/rcl:
     type: git
     url: https://github.com/ros2/rcl.git
-    version: master
+    version: 5fa1b0e0d9d63de3e6eddda87276cc290857bcb2
   ros2/rcutils:
     type: git
     url: https://github.com/esteve/rcutils.git
@@ -66,7 +66,7 @@ repositories:
   ros2/rmw_fastrtps:
     type: git
     url: https://github.com/ros2/rmw_fastrtps.git
-    version: master
+    version: cba42d56c435e0e790a0a573f84f6b85d93e3282
   ros2/rmw_implementation:
     type: git
     url: https://github.com/ros2/rmw_implementation.git
