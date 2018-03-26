@@ -14,10 +14,8 @@ before_install:
   - gem install xcpretty
 
 script:
-  - /bin/pwd
   - mkdir -p ~/ros2_ios_ws/src
   - cd ~/ros2_ios_ws
-  - /bin/pwd
   - vcs import ~/ros2_ios_ws/src < $TRAVIS_BUILD_DIR/ros2_objc_ios.repos
   - touch ~/ros2_ios_ws/src/ros2/rosidl/python_cmake_module/AMENT_IGNORE
   - touch ~/ros2_ios_ws/src/ros2/rosidl/rosidl_generator_py/AMENT_IGNORE
