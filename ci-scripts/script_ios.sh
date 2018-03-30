@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euf -o pipefail
 
 export ROS2_IOS_VERSION="10-3"
 export XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig

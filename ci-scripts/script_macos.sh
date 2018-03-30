@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euf -o pipefail
 
 mkdir -p ~/ros2_objc_ws/src
 cd ~/ros2_objc_ws

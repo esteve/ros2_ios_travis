@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -euf -o pipefail
 
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
