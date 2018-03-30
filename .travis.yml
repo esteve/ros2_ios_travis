@@ -17,3 +17,6 @@ before_install:
 
 script:
   - ./ci-scripts/script_${ROS2_OBJC_PLATFORM}.sh
+
+after_script:
+  - tail /tmp/ament_build.log
