@@ -47,6 +47,10 @@ repositories:
     type: git
     url: https://github.com/ros2/common_interfaces.git
     version: master
+  ros2/poco_vendor:
+    type: git
+    url: https://github.com/ros2/poco_vendor.git
+    version: master
   ros2/rcl:
     type: git
     url: https://github.com/esteve/rcl.git
