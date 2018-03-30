@@ -83,6 +83,14 @@ repositories:
     type: git
     url: https://github.com/esteve/rosidl_typesupport.git
     version: disable-multiple-typesupport-static
+  ros2/tinyxml_vendor:
+    type: git
+    url: https://github.com/ros2/tinyxml_vendor.git
+    version: master
+  ros2/tinyxml2_vendor:
+    type: git
+    url: https://github.com/ros2/tinyxml2_vendor.git
+    version: master
   ros2_objc/ros2_objc_examples:
     type: git
     url: https://github.com/esteve/ros2_objc_examples.git
