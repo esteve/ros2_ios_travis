@@ -83,15 +83,11 @@ repositories:
     type: git
     url: https://github.com/esteve/rosidl_typesupport.git
     version: disable-multiple-typesupport-static
-  ros2_objc/ros2_ios_examples:
+  ros2_objc/ros2_objc_examples:
     type: git
-    url: https://github.com/esteve/ros2_ios_examples.git
+    url: https://github.com/esteve/ros2_objc_examples.git
     version: master
   ros2_objc/ros2_objc:
     type: git
     url: https://github.com/esteve/ros2_objc.git
-    version: master
-  ruslo/polly:
-    type: git
-    url: https://github.com/ruslo/polly.git
     version: master
