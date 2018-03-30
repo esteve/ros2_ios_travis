@@ -6,9 +6,9 @@ command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 
 rvm get stable
 
-brew upgrade python
+brew upgrade python wget cmake
 
-brew install wget cmake cppcheck tinyxml eigen pcre
+brew install cppcheck tinyxml eigen pcre
 
 # install dependencies for Fast-RTPS if you are using it
 brew install asio tinyxml2
