@@ -1,7 +1,7 @@
 #!/bin/sh
 
-ROS2_IOS_VERSION="10-3"
-XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
+export ROS2_IOS_VERSION="10-3"
+export XCODE_XCCONFIG_FILE=$HOME/ros2_ios_ws/src/ruslo/polly/scripts/NoCodeSign.xcconfig
 
 mkdir -p ~/ros2_ios_ws/src
 cd ~/ros2_ios_ws
@@ -15,7 +15,7 @@ touch ~/ros2_ios_ws/src/ros2/rcl_interfaces/test_msgs/AMENT_IGNORE
 touch ~/ros2_ios_ws/src/ros2/common_interfaces/shape_msgs/AMENT_IGNORE
 touch ~/ros2_ios_ws/src/ros2/common_interfaces/stereo_msgs/AMENT_IGNORE
 touch ~/ros2_ios_ws/src/ros2/common_interfaces/trajectory_msgs/AMENT_IGNORE
-touch ~/ros2_ios_ws/src/ros2/common_interfaces/visualization_msg/AMENT_IGNORE
+touch ~/ros2_ios_ws/src/ros2/common_interfaces/visualization_msgs/AMENT_IGNORE
 cd ~/ros2_ios_ws/src/ros2/rosidl_typesupport
 patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
 cd ~/ros2_ios_ws
