@@ -37,8 +37,8 @@ repositories:
     version: master
   eProsima/Fast-RTPS-ios:
     type: git
-    url: https://github.com/eProsima/Fast-RTPS.git
-    version: master
+    url: https://github.com/esteve/Fast-RTPS.git
+    version: xcode
   ros2/ament_cmake_ros:
     type: git
     url: https://github.com/ros2/ament_cmake_ros.git
@@ -93,8 +93,8 @@ repositories:
     version: master
   ros2/tinyxml2_vendor:
     type: git
-    url: https://github.com/ros2/tinyxml2_vendor.git
-    version: master
+    url: https://github.com/esteve/tinyxml2_vendor.git
+    version: xcode
   ros2_objc/ros2_objc_examples:
     type: git
     url: https://github.com/esteve/ros2_objc_examples.git
