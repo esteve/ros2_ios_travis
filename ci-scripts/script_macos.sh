@@ -14,6 +14,7 @@ cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
 patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_objc.patch
 cd ~/ros2_objc_ws
 src/ament/ament_tools/scripts/ament.py build \
+    --use-xcode \
     --symlink-install \
     --isolated \
     --cmake-args \
