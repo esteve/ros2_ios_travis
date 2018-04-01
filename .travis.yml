@@ -2,15 +2,22 @@ language: generic
 
 matrix:
   include:
-    - os: osx
-      env:
-        - ROS2_OBJC_PLATFORM="macos"
-      osx_image: xcode8.3
+    # - os: osx
+    #   env:
+    #     - ROS2_OBJC_PLATFORM="macos"
+    #   osx_image: xcode8.3
 
-    - os: osx
+    # - os: osx
+    #   env:
+    #     - ROS2_OBJC_PLATFORM="ios"
+    #   osx_image: xcode8.3
+
+    - os: linux
       env:
-        - ROS2_OBJC_PLATFORM="ios"
-      osx_image: xcode8.3
+        - ROS2_OBJC_PLATFORM="ubuntu_xenial_shared"
+      services:
+        - docker
+      sudo: required
 
 before_install:
   - ./ci-scripts/before_install_${ROS2_OBJC_PLATFORM}.sh
