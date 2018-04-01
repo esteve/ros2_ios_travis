@@ -19,6 +19,5 @@ src/ament/ament_tools/scripts/ament.py build \
     --isolated \
     --cmake-args \
         -DCMAKE_BUILD_TYPE=Release \
-    --
-#| tee /tmp/ament_build.log | xcpretty
-#tail /tmp/ament_build.log
+    --  | tee /tmp/ament_build.log | xcpretty
+tail /tmp/ament_build.log
