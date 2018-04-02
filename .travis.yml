@@ -14,7 +14,7 @@ matrix:
 
     - os: linux
       env:
-        - ROS2_OBJC_PLATFORM="ubuntu_xenial_shared"
+        - ROS2_OBJC_PLATFORM="ubuntu_xenial_static"
       services:
         - docker
       sudo: required
