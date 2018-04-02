@@ -6,7 +6,7 @@ mkdir -p ~/ros2_objc_ws/src
 cd ~/ros2_objc_ws
 docker run \
     -v $PWD/ci-scripts/ci-scripts \
-    -v $PWD/ros2_objc_ws:/ros2_objc_ws \
+    -v $HOME/ros2_objc_ws:/ros2_objc_ws \
     -v $TRAVIS_BUILD_DIR/ros2_objc_macos.repos:/ros2_objc_macos.repos \
     -e UID=$(id -u) \
     -w /ros2_objc_ws \
@@ -25,7 +25,7 @@ patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_objc.patch
 cd ~/ros2_objc_ws
 docker run \
     -v $PWD/ci-scripts/ci-scripts \
-    -v $PWD/ros2_objc_ws:/ros2_objc_ws \
+    -v $HOME/ros2_objc_ws:/ros2_objc_ws \
     -v $TRAVIS_BUILD_DIR/ros2_objc_macos.repos:/ros2_objc_macos.repos \
     -e UID=$(id -u) \
     -w /ros2_objc_ws \
