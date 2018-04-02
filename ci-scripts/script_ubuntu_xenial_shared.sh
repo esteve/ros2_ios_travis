@@ -19,6 +19,7 @@ docker run \
     sh -c "\
         vcs import /ros2_objc_ws/src < /ros2_objc_macos.repos
         "
+touch ~/ros2_objc_ws/src/ros2/rcl_interfaces/rosgraph_msgs/AMENT_IGNORE
 touch ~/ros2_objc_ws/src/ros2/rcl_interfaces/test_msgs/AMENT_IGNORE
 touch ~/ros2_objc_ws/src/ros2/common_interfaces/shape_msgs/AMENT_IGNORE
 touch ~/ros2_objc_ws/src/ros2/common_interfaces/stereo_msgs/AMENT_IGNORE
