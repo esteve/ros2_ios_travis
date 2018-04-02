@@ -35,7 +35,6 @@ docker run \
     esteve/ros2-ubuntu-xenial-travisci:objc \
     sh -c "\
         src/ament/ament_tools/scripts/ament.py build \
-            --use-xcode \
             --symlink-install \
             --isolated \
             --cmake-args \
