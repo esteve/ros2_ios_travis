@@ -10,8 +10,10 @@ touch ~/ros2_objc_ws/src/ros2/common_interfaces/shape_msgs/AMENT_IGNORE
 touch ~/ros2_objc_ws/src/ros2/common_interfaces/stereo_msgs/AMENT_IGNORE
 touch ~/ros2_objc_ws/src/ros2/common_interfaces/trajectory_msgs/AMENT_IGNORE
 touch ~/ros2_objc_ws/src/ros2/common_interfaces/visualization_msgs/AMENT_IGNORE
+touch ~/ros2_ios_ws/src/ros2/rosidl/python_cmake_module/AMENT_IGNORE
+touch ~/ros2_ios_ws/src/ros2/rosidl/rosidl_generator_py/AMENT_IGNORE
 cd ~/ros2_objc_ws/src/ros2/rosidl_typesupport
-patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_objc.patch
+patch -p1 < ../../ros2_objc/ros2_objc/rosidl_typesupport_ros2_ios.patch
 cd ~/ros2_objc_ws
 src/ament/ament_tools/scripts/ament.py build \
     --use-xcode \
