@@ -12,6 +12,8 @@ docker run \
     -v $TRAVIS_BUILD_DIR/ros2_objc_macos.repos:/ros2_objc_macos.repos \
     -u $(id -u $USER) \
     -w /ros2_objc_ws \
+    -e CC=clang \
+    -e CXX=clang++ \
     --rm \
     esteve/ros2-ubuntu-xenial-travisci:objc \
     sh -c "\
@@ -31,6 +33,8 @@ docker run \
     -v $TRAVIS_BUILD_DIR/ros2_objc_macos.repos:/ros2_objc_macos.repos \
     -u $(id -u $USER) \
     -w /ros2_objc_ws \
+    -e CC=clang \
+    -e CXX=clang++ \
     --rm \
     esteve/ros2-ubuntu-xenial-travisci:objc \
     sh -c "\
