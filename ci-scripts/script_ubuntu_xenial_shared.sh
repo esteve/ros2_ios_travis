@@ -2,6 +2,8 @@
 
 set -euf -o pipefail
 
+set -xv
+
 mkdir -p ~/ros2_objc_ws/src
 cd ~/ros2_objc_ws
 docker run \
