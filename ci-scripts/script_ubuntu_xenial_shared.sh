@@ -8,7 +8,7 @@ docker run \
     -v $PWD/ci-scripts/ci-scripts \
     -v $HOME/ros2_objc_ws:/ros2_objc_ws \
     -v $TRAVIS_BUILD_DIR/ros2_objc_macos.repos:/ros2_objc_macos.repos \
-    -e UID=$(id -u) \
+    -u $(id -u $USER) \
     -w /ros2_objc_ws \
     --rm \
     esteve/ros2-ubuntu-xenial-travisci:objc \
@@ -27,7 +27,7 @@ docker run \
     -v $PWD/ci-scripts/ci-scripts \
     -v $HOME/ros2_objc_ws:/ros2_objc_ws \
     -v $TRAVIS_BUILD_DIR/ros2_objc_macos.repos:/ros2_objc_macos.repos \
-    -e UID=$(id -u) \
+    -u $(id -u $USER) \
     -w /ros2_objc_ws \
     --rm \
     esteve/ros2-ubuntu-xenial-travisci:objc \
